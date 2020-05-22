@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product list</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="header-title">
+                <h1>Product List</h1>
+            </div>
+            <!-- /.header-title -->
+            <div class="header-action">
+                <select id="Mass-delete-action">
+                    <option value="Mass-delete-action">Mass Delete Action</option>
+                </select>
+                <button type="button" id="btn1" class="btn">Apply</button>
+            </div>
+            <!-- /.header-action -->
+        </div>
+        <!-- /.container -->
+    </header>
+    <!-- /#header -->
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <div class="row d-flex flex-wrap">
+                    
+                    <% productsInfo.forEach(products => { %>
+                        <% if (products.type === 'DVD-disc') { %>
+                        <div class="col-4">
+                            <div class="product-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input class="check" type="checkbox">
+                                    <span class="product-item-sku"><span>SKU: </span><%= products.sku %></span>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <h3 class="product-item-title text-center"><%= products.name %></h3>
+                                <div class="product-info d-flex align-items-center justify-content-between">
+                                    <span class="product-item-attribute"><span>SIZE: </span><%= products.parameters.size %>MB</span>
+                                    <span class="product-item-price"><%= products.price %>$</span>
+                                </div>
+                            </div>
+                            <!-- /.product-item -->
+                        </div>
+                        <!-- /.col-4 -->
+                        <% } else if (products.type === 'Book') { %>
+                        <div class="col-4">
+                            <div class="product-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input class="check" type="checkbox">
+                                    <span class="product-item-sku"><span>SKU: </span><%= products.sku %></span>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <h3 class="product-item-title text-center"><%= products.name %></h3>
+                                <div class="product-info d-flex align-items-center justify-content-between">
+                                    <span class="product-item-attribute"><span class="span-color-grey">WEIGHT: </span><%= products.parameters.weight %>G</span>
+                                    <span class="product-item-price"><%= products.price %>$</span>
+                                </div>
+                            </div>
+                            <!-- /.product-item -->
+                        </div>
+                        <!-- /.col-4 -->
+                        <% } else { %>
+                        <div class="col-4">
+                            <div class="product-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input class="check" type="checkbox">
+                                    <span class="product-item-sku"><span>SKU: </span><%= products.sku %></span>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <h3 class="product-item-title text-center"><%= products.name %></h3>
+                                <div class="product-info d-flex align-items-center justify-content-between">
+                                    <span class="product-item-attribute"><span class="span-color-grey">DIMENSION: </span><%= products.parameters.height %>x<%= products.parameters.width %>x<%= products.parameters.length %></span>
+                                    <span class="product-item-price"><%= products.price %>$</span>
+                                </div>
+                            </div>
+                            <!-- /.product-item -->
+                        </div>
+                        <!-- /.col-4 -->
+                        <% } %>
+                        <% }) %>
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- /.section -->
+    </main>
+    <!-- /#main -->
+    <div id="modal" class="modal">
+        <span class="close-modal" title="Close Modal">×</span>
+        <form action="">
+            <div class="modal-content">
+                <h1>Delete All Products</h1>
+                <p>Are you sure you want to delete all products?</p>
+            <div class="">
+                <button type="button" id="btn2" class="btn">Cancel</button>
+                <button type="button" id="btn3" class="btn">Delete</button>
+            </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

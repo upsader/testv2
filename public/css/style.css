@@ -1,0 +1,271 @@
+/* Reset start */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #212121;
+    font: 400 14px/1 'Roboto', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+/* Reset end */
+
+/* Default clases start */
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Default clases end */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+main {
+    margin-top: 30px;
+}
+
+.container {
+    max-width: 1170px;
+	margin: auto;
+    padding: 15px 0;
+}
+
+#header {
+    padding: 30px 0 0 0;
+    box-shadow: 5px 7px 20px 0px rgba(77, 77, 77, 0.91);
+}
+
+.header-title {
+    color: white;
+    letter-spacing: 4px;
+}
+
+#Mass-delete-action {
+    margin-right: 20px;
+}
+
+select {
+    background-image: url('../img/arrows.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 15px 25px 15px 10px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    color: inherit;
+}
+
+
+.btn {
+    display: inline-block;
+	padding: 2.5px 15px;
+	font: 400 14px/1 'Roboto', sans-serif;
+	font-weight: 700;
+	cursor: pointer;
+    color: black;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #03e9f4;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4; 
+}
+
+.product-item {
+	box-shadow: 0 13px 27px rgba(0, 0, 0, 0.15);
+	padding: 15px;
+	margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+    background-color: rgba(236, 219, 250, 0.35);
+}
+
+.col-4 {
+	width: 25%;
+	padding: 0 15px;
+}
+
+.row {
+    margin: 0 -30px;
+    padding: 0 15px;
+}
+
+.product-item-sku, .product-item-attribute {
+    font-weight: 700;
+}
+
+.product-item-sku span, .product-item-attribute span {
+    color: white;
+}
+
+.product-item-price {
+    color: #03e9f4;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.product-item-title {
+    padding: 20px 0 30px 0;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.close {
+    right: 9px;
+    top: 0px;
+    font-weight: 900;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.item-info {
+    position: relative;
+}
+
+.item-info input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+  }
+
+.item-info label {
+    position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: white;
+      pointer-events: none;
+      transition: .5s;
+  }
+
+.item-info input:focus ~ label,
+.item-info input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #03e9f4;
+      font-size: 14px;
+  }
+
+.input-box-size, .input-box-weight, .input-box-whl {
+    position: absolute;
+    padding: 40px;
+    background-color: rgba(236, 219, 250, 0.35);
+    border-radius: 70px;
+    margin-right: 1rem;
+    display: none;
+    right: 557px;
+    top: 216px;
+}
+.input-box-weight, .input-box-whl {
+    position: absolute;
+    display: block;
+    padding: 40px;
+    background-color: rgba(236, 219, 250, 0.35);
+    border-radius: 70px;
+    margin-right: 1rem;
+    display: none;
+    right: 557px;
+    top: 216px;
+}
+
+.input-description {
+    max-width: 300px;
+}
+
+.type-switcher label {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    padding: 40px;
+    background-color: rgba(236, 219, 250, 0.9);
+    border-radius: 70px;
+    right: 38%;
+    top: 40%;
+    text-align: center;
+    margin: center;
+}
+
+.close-modal {
+    position: absolute;
+    display: inline-block;
+    right: 23px;
+    top: 11px;
+    font-weight: 900;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-content h1 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-weight: 700;
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.check {
+    width: 16px; 
+    height: 16px;
+}
